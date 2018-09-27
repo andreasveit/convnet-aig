@@ -8,6 +8,7 @@ The code is based on the [PyTorch example for training ResNet on Imagenet](https
 0. [Introduction](#introduction)
 0. [Usage](#usage)
 0. [Citing](#citing)
+0. [Requirements](#requirements)
 0. [Contact](#contact)
 
 ## Introduction
@@ -36,6 +37,15 @@ By default the training code keeps track of the model with the highest performan
 ```sh
 $ python train.py --test --resume runs/{your experiment name}/model_best.pth.tar
 ```
+
+## Requirements 
+This implementation is developed for 
+
+0. Python 3.6.5
+0. PyTorch 0.3.1
+0. CUDA 9.1
+
+For compatibility to newer versions, please make a pull request.
 
 ## Citing
 If you find this helps your research, please consider citing:
