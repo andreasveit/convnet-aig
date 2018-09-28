@@ -14,6 +14,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import math
 import numpy as np
+from collections import OrderedDict
 from torch.autograd import Variable
 
 from gumbelmodule import GumbleSoftmax
