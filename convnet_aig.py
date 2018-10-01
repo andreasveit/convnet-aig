@@ -333,9 +333,3 @@ class ActivationAccum_img():
                    self.heatmap.cpu().numpy() / 50])
         else:
             return([{k: self.gates[k] / 50000 for k in self.gates}])
-def test():
-    net = ResNet18()
-    y = net(Variable(torch.randn(1,3,32,32)))
-    print(y.size())
-
-# test()
