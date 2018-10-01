@@ -44,7 +44,7 @@ class GumbleSoftmax(torch.nn.Module):
         soft_samples = F.softmax(gumble_trick_log_prob_samples / temperature, dim)
         return soft_samples
     
-    def gumbel_softmax(self, logits, temperature, hard=False, index=False):
+    def gumbel_softmax(self, logits, temperature, hard=False):
         """Sample from the Gumbel-Softmax distribution and optionally discretize.
         Args:
         logits: [batch_size, n_class] unnormalized log-probs
@@ -60,8 +60,6 @@ class GumbleSoftmax(torch.nn.Module):
             _, max_value_indexes = y.data.max(1, keepdim=True)
             y_hard = logits.data.clone().zero_().scatter_(1, max_value_indexes, 1)
             y = Variable(y_hard - y.data) + y
-            if index:
-                return idx
         return y
         
     def forward(self, logits, temp=1, force_hard=False):
