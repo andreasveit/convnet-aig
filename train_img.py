@@ -25,8 +25,8 @@ import numpy as np
 parser = argparse.ArgumentParser(description='PyTorch CIFAR Example')
 parser.add_argument('data', metavar='DIR',
                     help='path to dataset')
-parser.add_argument('--batch-size', type=int, default=32, metavar='N',
-                    help='input batch size for training (default: 64)')
+parser.add_argument('--batch-size', type=int, default=256, metavar='N',
+                    help='input batch size for training (default: 256)')
 parser.add_argument('--epochs', type=int, default=100, metavar='N',
                     help='number of epochs to train (default: 200)')
 parser.add_argument('--lrdecay', default=30, type=int,
