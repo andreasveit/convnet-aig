@@ -45,6 +45,13 @@ This implementation is developed for
 0. PyTorch 0.3.1
 0. CUDA 9.1
 
+## Target Rate schedules  
+To improve performance and memory efficiency, the target rates of early, last and downsampling layers can be fixed so as to always execute the layers. 
+Specifically, for the results in the paper the following target rate schedules are used for ResNet 50:
+[1, 1, 0.8, 1, t, t, t, 1, t, t, t, t, t, 1, 0.7, 1] for t in [0.4, 0.5, 0.6, 0.7]
+For ResNet 101 the following rates can be used:
+([1]* 8).extend([t] * 25) for t in [0.3, 0.5]
+
 For compatibility to newer versions, please make a pull request.
 
 ## Citing
